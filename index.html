@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <!-- تحسين التحميل: preconnect لكل CDN مستخدم -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap"></noscript>
+
+    <!-- إعدادات أساسية لتبدو كبرنامج موبايل -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#10B981">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- وصف SEO نقي ومستهدف -->
+    <meta name="description" content="Mentra Kiosk Lite - نظام الكاشير ونقاط البيع وإدارة المخازن المجاني للأكشاك والمحلات. يعمل محلياً 100% بدون إنترنت ويحفظ فواتيرك وأرباحك على جهازك بأمان.">
+    <title>Mentra Kiosk Lite | نظام الكاشير ونقاط البيع المجاني للأكشاك والمحلات</title>
+    
+    <!-- ================= PWA Settings & Icons ================= -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+
+    <!-- مكتبات التصميم -->
+    <script src="assets/Tailwind.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <meta name="keywords" content="برنامج كاشير مجاني, برنامج نقاط بيع, برنامج كاشير سوبر ماركت, سيستم كاشير كشك, كاشير بدون انترنت, Mentra Kiosk, برنامج مبيعات ومخازن مجاني">
+    <meta name="author" content="Mentra Tech">
+    
+    <!-- توجيهات صارمة لعناكب البحث -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://mentra-tech.pages.dev/">
+
+    <!-- ================= Open Graph & Twitter ================= -->
+    <meta property="og:title" content="Mentra Kiosk Lite | نظام الكاشير ونقاط البيع المجاني">
+    <meta property="og:description" content="إدارة المبيعات، المخزون، المشتريات، وطباعة الفواتير بخصوصية تامة بدون إنترنت. ابدأ الآن مجاناً وثبت نظام الكاشير على جهازك.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mentra-tech.pages.dev/">
+    <meta property="og:site_name" content="Mentra Kiosk Lite">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mentra Kiosk Lite | سيستم الكاشير الذكي">
+    <meta name="twitter:description" content="إدارة المبيعات، المخزون، والأرباح بخصوصية تامة بدون إنترنت وبدون رسوم شهرية. ابدأ الآن مجاناً.">
+
+    <!-- ================= Structured Data (JSON-LD) ================= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://mentra-tech.pages.dev/#website",
+          "url": "https://mentra-tech.pages.dev/",
+          "name": "Mentra Kiosk Lite",
+          "alternateName": "Mentra Kiosk POS", 
+          "description": "نظام الكاشير ونقاط البيع المجاني للأكشاك والمحلات",
+          "inLanguage": "ar"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Mentra Kiosk Lite", 
+          "operatingSystem": "Web, Windows, Android",
+          "applicationCategory": "BusinessApplication",
+          "description": "برنامج مجاني لنقاط البيع (POS)، إدارة المخزون، فواتير الشراء، وحساب الأرباح. يعمل محلياً بدون إنترنت.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EGP"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: #F8FAFC; 
+            overflow-x: hidden; 
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .text-navy { color: #0F172A; }
+        .bg-navy { background-color: #0F172A; }
+
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(30px); }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        
+        /* تدرج لوني يعكس الاحترافية */
+        .hero-gradient { background: linear-gradient(135deg, #0F172A 0%, #0B1120 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- الشعار -->
+                <a href="index.html" class="flex items-center gap-2 cursor-pointer">
+<div class="w-14 h-14 md:w-20 md:h-20 flex items-center justify-center shrink-0">
+    <img src="assets/logo.png" alt="Logo" class="w-full h-full object-contain filter drop-shadow-lg" />
+</div>
+                    <span class="font-black text-lg md:text-2xl tracking-tight text-navy whitespace-nowrap">Mentra <span class="text-[#10B981]">Kiosk Lite</span></span>
+                </a>
+
+                <!-- الروابط (شاشات كبيرة) -->
+                <div class="hidden md:flex space-x-8 space-x-reverse font-bold text-sm text-slate-600 items-center">
+                    <a href="Tutorial.html" class="text-[#10B981] hover:text-emerald-700 transition flex items-center gap-1 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-100"><i class="fas fa-play-circle"></i> كيف يعمل النظام؟</a>
+                    <a href="#features" class="hover:text-[#10B981] transition">المميزات</a>
+                    <a href="#pricing" class="hover:text-[#10B981] transition">النسخ والأسعار</a>
+                </div>
+
+                <!-- الأزرار -->
+                <div class="flex items-center gap-2 md:gap-3">
+                    <a href="https://wa.me/201211934816" target="_blank" class="hidden md:flex items-center gap-1 text-[#3B82F6] font-bold hover:text-blue-700 transition">
+                        <i class="fab fa-whatsapp text-lg"></i> المبيعات
+                    </a>
+                    <a href="subscriptions.html" class="bg-[#0F172A] hover:bg-slate-800 text-white px-3 py-2 md:px-5 md:py-2.5 rounded-lg md:rounded-xl font-bold transition shadow-lg text-xs md:text-sm whitespace-nowrap flex items-center gap-1">
+                        <i class="fas fa-bolt text-[#10B981]"></i> <span class="hidden sm:inline">افتح النظام</span> مجاناً
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative pt-28 pb-16 md:pt-48 md:pb-32 hero-gradient overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-emerald-500 blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-500 blur-3xl opacity-20 animate-pulse delay-1000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-emerald-500/20 text-[#10B981] border border-emerald-500/30 text-xs font-bold tracking-widest mb-6 fade-in-up">سيستم كاشير وإدارة أكشاك ومحلات مجاني للأبد</span>
+            
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 fade-in-up delay-1 px-2">
+                نظام الكاشير ونقاط البيع وإدارة المخزون <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#3B82F6]">مباشرة على متصفحك</span>
+            </h1>
+            
+            <p class="mt-4 text-base md:text-xl text-slate-300 max-w-2xl mx-auto font-semibold mb-10 fade-in-up delay-2 px-4 leading-relaxed">
+                لأصحاب الأكشاك، المحلات التجارية، والسوبر ماركت الذين يفضلون الاحتفاظ ببيانات المبيعات والمخزن على أجهزتهم بخصوصية تامة، بدون إنترنت وبدون أي اشتراكات شهرية.
+            </p>
+            
+<div class="flex flex-col sm:flex-row justify-center items-center gap-3 md:gap-4 fade-in-up delay-2 px-4">
+    <!-- زر الدخول للمتصفح -->
+    <a href="subscriptions.html" class="w-full sm:w-auto bg-gradient-to-l from-[#10B981] to-[#3B82F6] hover:opacity-90 text-white px-8 py-4 rounded-xl font-black text-base md:text-lg transition shadow-[0_10px_25px_rgba(16,185,129,0.4)] flex items-center justify-center gap-2 active:scale-95">
+        <i class="fas fa-cash-register"></i> تشغيل سيستم الكاشير
+    </a>
+    
+    <!-- زر تحميل البرنامج مجاناً للوندوز -->
+    <a href="https://minaaramnious.itch.io/mentrakiosklite" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-red-600 to-pink-600 hover:opacity-90 text-white px-8 py-4 rounded-xl font-bold text-base md:text-lg transition shadow-[0_10px_25px_rgba(239,68,68,0.4)] flex items-center justify-center gap-2 active:scale-95">
+        <i class="fab fa-windows"></i> تحميل البرنامج مجاناً
+    </a>
+
+    <!-- زر الموقع الرسمي -->
+    <a href="https://mentra-tech.pages.dev/" target="_blank" class="w-full sm:w-auto glass-card text-white hover:bg-white/10 px-8 py-4 rounded-xl font-bold text-base md:text-lg transition flex items-center justify-center gap-2 active:scale-95">
+        <i class="fas fa-globe text-[#10B981]"></i> موقعنا الرسمي
+    </a>
+</div>
+			
+            <!-- زر التثبيت PWA -->
+            <div class="flex justify-center mt-6 fade-in-up delay-2 px-4">
+                <button id="installAppBtn" class="hidden group relative w-full sm:w-auto items-center justify-center gap-4 bg-[#0F172A]/80 backdrop-blur-md border border-[#10B981]/50 hover:border-[#10B981] rounded-2xl p-2 pl-6 shadow-[0_0_25px_rgba(16,185,129,0.15)] hover:shadow-[0_0_35px_rgba(16,185,129,0.3)] transition-all duration-300 active:scale-95 overflow-hidden">
+                    <div class="absolute inset-0 w-1/4 h-full bg-white/10 skew-x-[-25deg] -translate-x-[200%] group-hover:animate-[shine_1.2s_infinite]"></div>
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#10B981] to-[#3B82F6] flex items-center justify-center text-white shadow-inner shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-download text-xl"></i>
+                    </div>
+                    <div class="flex flex-col items-start text-right">
+                        <span class="font-black text-white text-sm md:text-base leading-tight">تثبيت التطبيق الآن</span>
+                        <span class="text-[10px] md:text-xs font-bold text-[#10B981] mt-0.5">أضف نظام الكاشير كبرنامج على جهازك</span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="mt-8 fade-in-up delay-2">
+                <a href="Tutorial.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white font-bold text-sm md:text-base border-b border-slate-600 hover:border-white pb-1 transition-all">
+                    <i class="fas fa-play-circle text-[#10B981]"></i> شاهد دليل تشغيل النظام خطوة بخطوة
+                </a>
+            </div>
+
+            <!-- إحصائيات وميزات سريعة -->
+            <div class="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-slate-800 pt-8 fade-in-up delay-2">
+                <div class="text-center"><h4 class="text-2xl md:text-3xl font-black text-white"><i class="fas fa-boxes-stacked"></i></h4><p class="text-[10px] md:text-xs text-slate-400 mt-2 font-bold">مخزون ومنتجات غير محدودة</p></div>
+                <div class="text-center"><h4 class="text-2xl md:text-3xl font-black text-white"><i class="fas fa-receipt"></i></h4><p class="text-[10px] md:text-xs text-slate-400 mt-2 font-bold">طباعة فواتير حرارية فورية</p></div>
+                <div class="text-center"><h4 class="text-2xl md:text-3xl font-black text-white"><i class="fas fa-truck-fast"></i></h4><p class="text-[10px] md:text-xs text-slate-400 mt-2 font-bold">مشتريات وموردين دقيقة</p></div>
+                <div class="text-center"><h4 class="text-2xl md:text-3xl font-black text-white"><i class="fas fa-wifi"></i></h4><p class="text-[10px] md:text-xs text-slate-400 mt-2 font-bold">أوفلاين 100% بدون إنترنت</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURES SECTION ================= -->
+    <section id="features" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                <span class="text-[#10B981] font-bold text-sm tracking-wider uppercase mb-2 block">بكل شفافية</span>
+                <h2 class="text-2xl md:text-4xl font-black text-navy mb-4">ماذا تقدم النسخة المجانية وماذا ينقصها؟</h2>
+                <p class="text-sm md:text-base text-slate-500 font-semibold">إليك القدرات الحقيقية لنسخة إدارة الأكشاك ونقاط البيع (LITE) المتوفرة بين يديك الآن.</p>
+            </div>
+
+            <!-- الميزات المجانية -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-emerald-100 shadow-sm relative">
+                    <div class="absolute top-4 left-4 text-emerald-600 text-[10px] font-black bg-emerald-100 px-2 py-1 rounded">متاح مجاناً</div>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-[#10B981] rounded-xl flex items-center justify-center text-lg md:text-xl mb-4"><i class="fas fa-cash-register"></i></div>
+                    <h3 class="text-lg md:text-xl font-bold text-navy mb-2">نقطة البيع والكاشير السريع</h3>
+                    <p class="text-slate-600 text-xs md:text-sm font-semibold">دعم الباركود واللمس، السلة الفورية، الخصومات المباشرة، وطباعة الإيصالات الحرارية مع حفظ الفواتير تلقائياً.</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-emerald-100 shadow-sm relative">
+                    <div class="absolute top-4 left-4 text-emerald-600 text-[10px] font-black bg-emerald-100 px-2 py-1 rounded">متاح مجاناً</div>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-[#10B981] rounded-xl flex items-center justify-center text-lg md:text-xl mb-4"><i class="fas fa-boxes-packing"></i></div>
+                    <h3 class="text-lg md:text-xl font-bold text-navy mb-2">المخزن والوحدات المزدوجة</h3>
+                    <p class="text-slate-600 text-xs md:text-sm font-semibold">شراء بالكرتونة وبيع بالقطعة مع احتساب ذكي للكميات، أسعار التكلفة وهامش الربح، وتنبيهات فورية لنواقص المخزن.</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-emerald-100 shadow-sm relative">
+                    <div class="absolute top-4 left-4 text-emerald-600 text-[10px] font-black bg-emerald-100 px-2 py-1 rounded">متاح مجاناً</div>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-[#10B981] rounded-xl flex items-center justify-center text-lg md:text-xl mb-4"><i class="fas fa-chart-pie"></i></div>
+                    <h3 class="text-lg md:text-xl font-bold text-navy mb-2">الأرباح والمصروفات والتقارير</h3>
+                    <p class="text-slate-600 text-xs md:text-sm font-semibold">حساب صافي الأرباح بعد خصم المصروفات التشغيلية، سجل مرتجعات العملاء والموردين، وتصدير كامل البيانات إلى ملفات Excel.</p>
+                </div>
+            </div>
+
+            <!-- الميزات المدفوعة (النسخة السحابية) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div class="bg-blue-50 p-6 md:p-8 rounded-2xl border border-blue-200 shadow-sm relative opacity-90">
+                    <div class="absolute top-4 left-4 text-blue-500 text-[10px] font-black bg-blue-100 px-2 py-1 rounded">النسخة السحابية المدفوعة</div>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-lg md:text-xl mb-4"><i class="fas fa-network-wired"></i></div>
+                    <h3 class="text-lg md:text-xl font-bold text-blue-900 mb-2">ربط الفروع وأجهزة الكاشير المتعددة</h3>
+                    <p class="text-blue-700/80 text-xs md:text-sm font-semibold">في النسخة المتقدمة يمكنك ربط عدة أجهزة كاشير في نفس المحل أو بين فروع متعددة في مستودع ومخزن سحابي موحد.</p>
+                </div>
+
+                <div class="bg-blue-50 p-6 md:p-8 rounded-2xl border border-blue-200 shadow-sm relative opacity-90">
+                    <div class="absolute top-4 left-4 text-blue-500 text-[10px] font-black bg-blue-100 px-2 py-1 rounded">النسخة السحابية المدفوعة</div>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-lg md:text-xl mb-4"><i class="fas fa-mobile-screen-button"></i></div>
+                    <h3 class="text-lg md:text-xl font-bold text-blue-900 mb-2">تطبيق موبايل للمالك والفاتورة الإلكترونية</h3>
+                    <p class="text-blue-700/80 text-xs md:text-sm font-semibold">متابعة المبيعات والأرباح ونواقص البضاعة لحظة بلحظة من هاتفك في أي مكان مع دعم منظومة الفاتورة الإلكترونية وإشعارات الواتساب.</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 md:mt-12 bg-amber-50 border border-amber-200 rounded-2xl p-5 md:p-6 flex flex-col md:flex-row gap-4 items-center md:items-start max-w-4xl mx-auto text-center md:text-right">
+                <i class="fas fa-exclamation-triangle text-amber-500 text-3xl md:text-2xl md:mt-1"></i>
+                <div>
+                    <h4 class="font-bold text-amber-800 text-base md:text-lg mb-2">تنبيه أمني هام لمستخدمي النسخة المحلية المجانية</h4>
+                    <p class="text-amber-700 text-xs md:text-sm font-semibold leading-relaxed">
+                        نظراً لأن جميع بيانات المبيعات والمخزن تُحفظ محلياً على متصفح جهازك بأمان وتعمل أوفلاين (Lite)، <strong>يجب عليك استخدام أداة "النسخ الاحتياطي" المدمجة بشكل دوري</strong>. مسح بيانات المتصفح أو تهيئة الجهاز قد يؤدي لفقدان الفواتير المسجلة!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRICING SECTION ================= -->
+    <section id="pricing" class="py-16 md:py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-4xl font-black text-navy mb-4">متى تحتاج للترقية؟</h2>
+                <p class="text-sm md:text-base text-slate-500 font-semibold">إذا كنت تمتلك كشكاً أو محلاً تجارياً بجهاز واحد، فالنسخة المجانية تفي بجميع احتياجاتك. أما إذا كان لديك فروع وتريد مراقبة تجارتك من هاتفك، فإليك الحل.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+                
+                <!-- Free Plan -->
+                <div class="bg-white rounded-3xl p-6 md:p-8 border-2 border-emerald-400 shadow-lg relative flex flex-col justify-between">
+                    <div>
+                        <div class="absolute top-0 right-1/2 translate-x-1/2 -mt-3 md:-mt-4 bg-[#10B981] text-white text-xs md:text-sm font-black px-4 py-1 rounded-full whitespace-nowrap">النسخة الحالية</div>
+                        <h3 class="text-xl md:text-2xl font-black text-navy mt-4 text-center">Mentra Kiosk (Lite)</h3>
+                        <div class="text-center my-4 md:my-6"><span class="text-3xl md:text-4xl font-black text-[#10B981]">مجانـــاً</span><span class="text-slate-500 text-xs md:text-sm font-bold block mt-1">مدى الحياة وبدون أي رسوم</span></div>
+                        <ul class="space-y-3 md:space-y-4 mb-6 md:mb-8 text-xs md:text-sm font-semibold text-slate-600">
+                            <li><i class="fas fa-check text-emerald-500 mr-2 w-5"></i> قاعدة بيانات محلية آمنة (أوفلاين 100%)</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2 w-5"></i> فواتير مبيعات وطباعة إيصالات غير محدودة</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2 w-5"></i> إدارة مشتريات ومصروفات ومرتجعات</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2 w-5"></i> نسخ احتياطي يدوي فائق السرعة لبياناتك</li>
+                            <li class="text-slate-400"><i class="fas fa-times text-rose-300 mr-2 w-5"></i> لا تدعم المزامنة السحابية وتعدد الفروع</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <a href="subscriptions.html" class="w-full flex items-center justify-center gap-2 bg-slate-900 text-white hover:bg-slate-800 font-bold py-3 md:py-4 rounded-xl transition active:scale-95 text-sm md:text-base">
+                            <i class="fas fa-bolt text-[#10B981]"></i> تشغيل النظام الآن
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cloud SaaS Plan -->
+                <div class="relative group mt-10 lg:mt-0">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    
+                    <div class="relative bg-slate-900 rounded-3xl p-8 border-2 border-emerald-500/50 shadow-2xl overflow-hidden lg:-translate-y-6 transition-transform duration-500 hover:-translate-y-8 h-full flex flex-col justify-between">
+                        
+                        <div>
+                            <div class="absolute -right-4 -top-4 text-white/5 text-8xl transform rotate-12"><i class="fas fa-store"></i></div>
+                            <div class="absolute top-0 right-1/2 translate-x-1/2">
+                                <span class="bg-gradient-to-r from-emerald-500 to-blue-600 text-white text-[10px] md:text-xs font-black px-6 py-1.5 rounded-b-xl shadow-lg uppercase tracking-widest">الخيار الاحترافي السحابي</span>
+                            </div>
+
+                            <div class="text-center mt-6">
+                                <h3 class="text-2xl md:text-3xl font-black text-white tracking-tight">Mentra Kiosk <span class="text-[#10B981]">Pro Cloud</span></h3>
+                                <div class="mt-6 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                                    <span class="text-4xl md:text-5xl font-black text-[#10B981]">سحابية</span>
+                                    <div class="flex flex-col mt-2">
+                                        <span class="text-slate-300 text-sm font-bold">للفروع والمحلات والمتاجر الكبيرة</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="mt-8 space-y-4 relative z-10 mb-8">
+                                <li class="flex items-start gap-3 group/item">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5"><i class="fas fa-check text-[#10B981] text-[10px]"></i></div>
+                                    <span class="text-slate-300 text-sm font-semibold group-hover/item:text-white transition-colors">مزامنة سحابية لحظية بين الكاشيرات والإدارة</span>
+                                </li>
+                                <li class="flex items-start gap-3 group/item">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5"><i class="fas fa-check text-[#10B981] text-[10px]"></i></div>
+                                    <span class="text-slate-300 text-sm font-semibold group-hover/item:text-white transition-colors">تطبيق موبايل لمتابعة حركة المبيعات من أي مكان</span>
+                                </li>
+                                <li class="flex items-start gap-3 group/item">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5"><i class="fas fa-check text-[#10B981] text-[10px]"></i></div>
+                                    <span class="text-slate-300 text-sm font-semibold group-hover/item:text-white transition-colors">دعم الفاتورة الإلكترونية والربط الضريبي</span>
+                                </li>
+                                <li class="flex items-start gap-3 group/item">
+                                    <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5"><i class="fas fa-check text-[#10B981] text-[10px]"></i></div>
+                                    <span class="text-slate-300 text-sm font-semibold group-hover/item:text-white transition-colors">صلاحيات دقيقة لكل كاشير مع حماية من التلاعب</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <a href="https://wa.me/201211934816" target="_blank" class="w-full overflow-hidden relative group/btn flex items-center justify-center bg-gradient-to-r from-[#10B981] to-[#3B82F6] text-white font-black py-4 rounded-2xl transition-all shadow-[0_10px_20px_-10px_rgba(16,185,129,0.5)] active:scale-95">
+                                <div class="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-[-25deg] -translate-x-full group-hover/btn:animate-[shine_0.75s_infinite]"></div>
+                                <i class="fab fa-whatsapp text-xl ml-2"></i><span class="relative z-10 text-base">اطلب النسخة السحابية الآن</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SUPPORT SECTION ================= -->
+    <section id="support" class="py-16 md:py-20 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+            <div class="w-full lg:w-1/2">
+                <div class="bg-slate-50 rounded-3xl p-8 md:p-12 flex items-center justify-center border border-slate-100">
+                    <i class="fas fa-store-alt text-7xl md:text-9xl text-slate-300"></i>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 text-center lg:text-right">
+                <div class="w-12 h-12 md:w-16 md:h-16 bg-emerald-50 text-[#10B981] rounded-xl md:rounded-2xl flex items-center justify-center text-2xl md:text-3xl mb-4 md:mb-6 mx-auto lg:mx-0"><i class="fas fa-headset"></i></div>
+                <h2 class="text-2xl md:text-4xl font-black text-navy mb-3 md:mb-4">تحتاج لربط فروعك أو أجهزة متعددة؟</h2>
+                <p class="text-sm md:text-lg text-slate-600 font-semibold leading-relaxed mb-6 md:mb-8">
+                    إذا كان نشاطك التجاري يضم أكثر من كاشير في نفس المكان أو عدة فروع وترغب في متابعة المخزن وحركة البيع والموردين سحابياً وبشكل موحد، تواصل مع فريق المبيعات مباشرة.
+                </p>
+                
+                <div class="inline-block bg-slate-50 p-4 md:p-6 rounded-2xl border border-slate-200 w-full lg:w-auto text-center lg:text-right hover:border-emerald-200 hover:bg-emerald-50/50 transition-colors">
+                    <p class="text-xs md:text-sm font-bold text-slate-500 mb-2">للمبيعات والاستفسار (واتساب فقط):</p>
+                    <a href="https://wa.me/201211934816" target="_blank" class="text-2xl md:text-3xl font-black text-[#10B981] hover:text-emerald-700 transition flex items-center justify-center lg:justify-start gap-2 md:gap-3 dir-ltr">
+                        <i class="fab fa-whatsapp"></i> 01211934816
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-slate-900 pt-12 md:pt-16 pb-6 md:pb-8 border-t-4 border-[#10B981]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8 md:mb-12">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded bg-gradient-to-br from-[#10B981] to-[#3B82F6] flex items-center justify-center text-white"><i class="fas fa-store text-sm"></i></div>
+                    <span class="font-black text-lg md:text-xl text-white">Mentra <span class="text-[#10B981]">Kiosk Lite</span></span>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-4 items-center">
+                    <a href="Tutorial.html" class="text-slate-400 hover:text-white text-sm font-bold flex items-center gap-2 transition-colors">
+                        <i class="fas fa-question-circle"></i> دليل الاستخدام والشاشات
+                    </a>
+                    
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-full px-4 py-2 text-slate-300 font-bold text-xs md:text-sm flex items-center gap-2">
+                        <i class="fas fa-phone-alt text-[#10B981]"></i> مبيعات النسخة السحابية: <span class="dir-ltr text-white">01211934816</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 md:pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
+                <p class="text-xs md:text-sm font-semibold text-slate-500">&copy; <span id="year"></span> Mentra Tech. جميع الحقوق محفوظة.</p>
+                <div class="text-[10px] md:text-xs font-bold text-slate-600 bg-slate-800 px-3 py-1 rounded-full">
+                    صُنع خصيصاً لأصحاب الأكشاك والمحلات التجارية
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes shine { 100% { translate: 250%; } }
+    </style>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 1. تسجيل Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => console.log('SW Registered'))
+                    .catch(err => console.log('SW Registration Failed', err));
+            });
+        }
+
+        // 2. منطق زر تثبيت التطبيق
+        let deferredPrompt;
+        const installBtn = document.getElementById('installAppBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.classList.remove('hidden');
+            installBtn.classList.add('flex');
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt !== null) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                }
+                deferredPrompt = null;
+                installBtn.classList.add('hidden');
+                installBtn.classList.remove('flex');
+            }
+        });
+
+        window.addEventListener('appinstalled', () => {
+            deferredPrompt = null;
+            installBtn.classList.add('hidden');
+            installBtn.classList.remove('flex');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0F172A">
+    <title>Mentra Kiosk Lite - دليل استخدام النظام</title>
+    <link rel="icon" href="assets/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS & FontAwesome -->
+    <script src="assets/Tailwind.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0B1120;
+            color: #E2E8F0;
+            scroll-behavior: smooth;
+        }
+
+        /* خلفية ناعمة متحركة */
+        .bg-glow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .glow-1 { background: #10B981; top: -100px; right: -100px; }
+        .glow-2 { background: #3B82F6; bottom: 10%; left: -100px; }
+
+        /* سكرول بار أنيق مخفي */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0F172A; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 8px; }
+        ::-webkit-scrollbar-thumb:hover { background: #10B981; }
+
+        .step-card {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.15);
+        }
+
+        .img-preview {
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+        .img-preview:hover {
+            transform: scale(1.015);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen">
+    <!-- خلفيات الإضاءة -->
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <!-- الهيدر العلوي والتنقل -->
+    <header class="sticky top-0 z-40 bg-[#0F172A]/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-gradient-to-br from-[#10B981] to-[#3B82F6] rounded-2xl flex items-center justify-center p-2 shadow-lg shadow-emerald-500/20">
+                    <img src="assets/logo.png" alt="Logo" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <i class="fas fa-store text-white text-xl hidden"></i>
+                </div>
+                <div>
+                    <h1 class="text-white font-black text-xl tracking-tight leading-tight">دليل نظام <span class="text-[#10B981]">Mentra Kiosk</span></h1>
+                    <p class="text-xs font-bold text-slate-400">شرح توضيحي كامل لجميع شاشات النظام خطوة بخطوة</p>
+                </div>
+            </div>
+
+            <!-- زر العودة للرئيسية -->
+            <a href="index.html" class="flex items-center gap-2 bg-emerald-500/10 hover:bg-emerald-500 text-[#10B981] hover:text-white border border-emerald-500/30 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 shadow-sm">
+                <span>الصفحة الرئيسية</span>
+                <i class="fas fa-arrow-left text-xs"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- شريط التنقل السريع بين الشاشات (Pills) -->
+    <div class="sticky top-20 z-30 bg-[#0B1120]/95 backdrop-blur border-b border-slate-800/80 py-3 px-4">
+        <div class="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto text-xs font-bold no-scrollbar py-1">
+            <span class="text-slate-500 shrink-0 ml-2"><i class="fas fa-compass"></i> انتقال سريع:</span>
+            <a href="#step-1" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-[#10B981] hover:text-white text-slate-300 transition-colors">1. لوحة التحكم</a>
+            <a href="#step-2" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-[#10B981] hover:text-white text-slate-300 transition-colors">2. الكاشير (POS)</a>
+            <a href="#step-3" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-[#10B981] hover:text-white text-slate-300 transition-colors">3. المخزن</a>
+            <a href="#step-4" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-[#10B981] hover:text-white text-slate-300 transition-colors">4. المشتريات</a>
+            <a href="#step-5" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-[#10B981] hover:text-white text-slate-300 transition-colors">5. المرتجعات</a>
+            <a href="#step-6" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-[#10B981] hover:text-white text-slate-300 transition-colors">6. التقارير</a>
+            <a href="#step-7" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-[#10B981] hover:text-white text-slate-300 transition-colors">7. الإعدادات</a>
+            <a href="#step-8" class="shrink-0 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-[#10B981] hover:text-white text-slate-300 transition-colors">8. النسخ الاحتياطي</a>
+            <a href="#upgrade-section" class="shrink-0 px-3 py-1.5 rounded-lg bg-blue-600/30 text-blue-400 hover:bg-blue-600 hover:text-white transition-colors border border-blue-500/30">🚀 النسخة المتقدمة</a>
+        </div>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 space-y-16 relative z-10">
+
+        <!-- مقدمة ترحيبية -->
+        <div class="text-center space-y-4 max-w-2xl mx-auto">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black bg-emerald-500/10 text-[#10B981] border border-emerald-500/20">
+                <i class="fas fa-book-open"></i> الدليل الإرشادي المعتمد
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">تعرّف على كافة وظائف <span class="text-transparent bg-clip-text bg-gradient-to-l from-[#10B981] to-[#3B82F6]">Mentra Kiosk Lite</span></h2>
+            <p class="text-slate-400 font-semibold text-sm leading-relaxed">
+                دليل مصور شامل يشرح طريقة إدارة المبيعات، المخزون، المشتريات، ومتابعة الأرباح والتقارير بدقة وسرعة وبدون الحاجة لإنترنت. اضغط على أي صورة لتكبيرها.
+            </p>
+        </div>
+
+        <!-- 1. لوحة التحكم (Dashboard) -->
+        <section id="step-1" class="step-card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+                <div class="flex items-center gap-4">
+                    <span class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-[#10B981] flex items-center justify-center font-black text-xl">01</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white">لوحة التحكم الرئيسية (Dashboard)</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 font-semibold mt-1">المركز المالي الشامل ومؤشرات أداء النشاط الحيوي</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 bg-slate-800/60 px-3 py-2 rounded-xl self-start">
+                    <i class="fas fa-eye text-emerald-400"></i> متاح للمدير والكاشير
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-sm font-semibold mb-6 leading-relaxed">
+                تمنحك لوحة التحكم نظرة بانورامية سريعة عن الكشك: تتبع المبيعات الصافية، الأرباح اللحظية، المصروفات، وتنبيهات نواقص المخزن (المنتجات التي قاربت على النفاد)، بالإضافة إلى رسم بياني يوضح التدفق المالي مع إمكانية التحديد الزمني (من تاريخ - إلى تاريخ).
+            </p>
+
+            <div class="overflow-hidden rounded-2xl border-2 border-slate-800 bg-slate-950 p-2 shadow-2xl">
+                <img src="assets/steps/dashboard.PNG" alt="شرح لوحة التحكم" class="img-preview w-full rounded-xl object-contain max-h-[500px]" onclick="openModal(this.src, '1. لوحة التحكم الرئيسية')">
+            </div>
+            <p class="text-center text-xs text-slate-500 font-bold mt-3"><i class="fas fa-search-plus ml-1"></i> اضغط على الصورة لتكبيرها</p>
+        </section>
+
+        <!-- 2. الكاشير ونقاط البيع (POS) -->
+        <section id="step-2" class="step-card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+                <div class="flex items-center gap-4">
+                    <span class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center font-black text-xl">02</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white">نقطة البيع والكاشير (POS)</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 font-semibold mt-1">البيع المباشر السريع بالباركود والطباعة الحرارية</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 bg-slate-800/60 px-3 py-2 rounded-xl self-start">
+                    <i class="fas fa-barcode text-blue-400"></i> دعم قارئ الباركود + اللمس
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-sm font-semibold mb-6 leading-relaxed">
+                شاشة بيع فورية فائقة السرعة، تتيح مسح الباركود، إضافة وتعديل الكميات بضغطة زر، وتطبيق الخصومات الفورية. تشمل طباعة الإيصال الحراري فوراً وسجل الفواتير السابقة مع إمكانية مراجعة الفاتورة أو إعادة طباعتها وتعديل الكميات بأمان مع إعادة تحديث رصيد المخزن تلقائياً.
+            </p>
+
+            <div class="overflow-hidden rounded-2xl border-2 border-slate-800 bg-slate-950 p-2 shadow-2xl">
+                <img src="assets/steps/pos.PNG" alt="شرح نقطة البيع" class="img-preview w-full rounded-xl object-contain max-h-[500px]" onclick="openModal(this.src, '2. شاشة الكاشير والبيع المباشر')">
+            </div>
+            <p class="text-center text-xs text-slate-500 font-bold mt-3"><i class="fas fa-search-plus ml-1"></i> اضغط على الصورة لتكبيرها</p>
+        </section>
+
+        <!-- 3. المخزن والمنتجات (Inventory) -->
+        <section id="step-3" class="step-card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+                <div class="flex items-center gap-4">
+                    <span class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center font-black text-xl">03</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white">المخزن والمنتجات (Inventory)</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 font-semibold mt-1">تسجيل الأصناف، أسعار التكلفة والبيع، والوحدات المزدوجة</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 bg-slate-800/60 px-3 py-2 rounded-xl self-start">
+                    <i class="fas fa-boxes-stacked text-amber-400"></i> نظام الكرتونة والقطعة
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-sm font-semibold mb-6 leading-relaxed">
+                تحكم كامل في بضاعة الكشك: تعريف المنتجات بالباركود أو الاسم، ضبط سعر الشراء وسعر البيع للقطعة وللكرتونة مع إدخال عدد القطع في الكرتونة. يمكنك البحث السريع، تعديل الأسعار، ومراقبة المخزون الفعلي المتبقي في أي وقت.
+            </p>
+
+            <div class="overflow-hidden rounded-2xl border-2 border-slate-800 bg-slate-950 p-2 shadow-2xl">
+                <img src="assets/steps/inventory.PNG" alt="شرح المخزون" class="img-preview w-full rounded-xl object-contain max-h-[500px]" onclick="openModal(this.src, '3. إدارة المخزن والمنتجات')">
+            </div>
+            <p class="text-center text-xs text-slate-500 font-bold mt-3"><i class="fas fa-search-plus ml-1"></i> اضغط على الصورة لتكبيرها</p>
+        </section>
+
+        <!-- 4. المشتريات والموردين (Purchases) -->
+        <section id="step-4" class="step-card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+                <div class="flex items-center gap-4">
+                    <span class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 flex items-center justify-center font-black text-xl">04</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white">المشتريات والموردين (Purchases)</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 font-semibold mt-1">استلام بضاعة جديدة، ربط الفواتير بالموردين، والخصومات المكتسبة</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 bg-slate-800/60 px-3 py-2 rounded-xl self-start">
+                    <i class="fas fa-truck-fast text-indigo-400"></i> زيادة المخزون تلقائياً
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-sm font-semibold mb-6 leading-relaxed">
+                إدارة ملفات الموردين وشركات التوزيع مع أرقام هواتفهم، وتسجيل فواتير الشراء سواء بالكرتونة أو بالقطعة مع إمكانية تسجيل الخصم المكتسب من المورد. بمجرد حفظ الفاتورة، تزيد كميات البضاعة في المخزن فورياً عبر نظام المعاملات المحمية (Transactions).
+            </p>
+
+            <div class="overflow-hidden rounded-2xl border-2 border-slate-800 bg-slate-950 p-2 shadow-2xl">
+                <img src="assets/steps/purchases.PNG" alt="شرح المشتريات" class="img-preview w-full rounded-xl object-contain max-h-[500px]" onclick="openModal(this.src, '4. المشتريات وحسابات الموردين')">
+            </div>
+            <p class="text-center text-xs text-slate-500 font-bold mt-3"><i class="fas fa-search-plus ml-1"></i> اضغط على الصورة لتكبيرها</p>
+        </section>
+
+        <!-- 5. المرتجعات والمصروفات (Returns & Expenses) -->
+        <section id="step-5" class="step-card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+                <div class="flex items-center gap-4">
+                    <span class="w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/30 text-orange-400 flex items-center justify-center font-black text-xl">05</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white">المرتجعات والمصروفات التشغيلية (Returns)</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 font-semibold mt-1">ضبط رد البضاعة للعملاء والموردين وحساب النثريات</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 bg-slate-800/60 px-3 py-2 rounded-xl self-start">
+                    <i class="fas fa-receipt text-orange-400"></i> ميزان مالي سليم
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-sm font-semibold mb-6 leading-relaxed">
+                تحتوي الشاشة على 4 أقسام دقيقة: تسجيل مرتجع من عميل (يزيد المخزن)، مرتجع إلى مورد (يخصم من المخزن)، مع جداول تفصيلية لكل حركة، وقسم خاص بالمصروفات التشغيلية (كهرباء، نقل، إيجار، عمالة) لخصمها من أرباح النشاط بدقة.
+            </p>
+
+            <div class="overflow-hidden rounded-2xl border-2 border-slate-800 bg-slate-950 p-2 shadow-2xl">
+                <img src="assets/steps/returns.PNG" alt="شرح المرتجعات والمصروفات" class="img-preview w-full rounded-xl object-contain max-h-[500px]" onclick="openModal(this.src, '5. المرتجعات والمصروفات')">
+            </div>
+            <p class="text-center text-xs text-slate-500 font-bold mt-3"><i class="fas fa-search-plus ml-1"></i> اضغط على الصورة لتكبيرها</p>
+        </section>
+
+        <!-- 6. التقارير والأرباح (Reports) -->
+        <section id="step-6" class="step-card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+                <div class="flex items-center gap-4">
+                    <span class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-black text-xl">06</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white">المبيعات والأرباح والتقارير (Reports)</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 font-semibold mt-1">تحليل حركة رأس المال واستخراج ملفات Excel (CSV)</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 bg-slate-800/60 px-3 py-2 rounded-xl self-start">
+                    <i class="fas fa-file-excel text-emerald-400"></i> تصدير إكسل داعم للعربية
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-sm font-semibold mb-6 leading-relaxed">
+                لوحة إحصائية استراتيجية تتيح تصفية العمليات حسب التاريخ: عرض الرسوم البيانية، مقارنة المبيعات بالمشتريات والمصروفات، واحتساب صافي الأرباح. كما توفر جداول مقسمة بحد أقصى 4 عناصر في الصفحة وزر تصدير إلى ملف إكسل رسمي وفوري.
+            </p>
+
+            <div class="overflow-hidden rounded-2xl border-2 border-slate-800 bg-slate-950 p-2 shadow-2xl">
+                <img src="assets/steps/reports.PNG" alt="شرح التقارير" class="img-preview w-full rounded-xl object-contain max-h-[500px]" onclick="openModal(this.src, '6. التقارير المالية والإحصائيات')">
+            </div>
+            <p class="text-center text-xs text-slate-500 font-bold mt-3"><i class="fas fa-search-plus ml-1"></i> اضغط على الصورة لتكبيرها</p>
+        </section>
+
+        <!-- 7. إعدادات النظام (Settings) -->
+        <section id="step-7" class="step-card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+                <div class="flex items-center gap-4">
+                    <span class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center font-black text-xl">07</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white">إعدادات النظام والموظفين (Settings)</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 font-semibold mt-1">تعديل بيانات الحساب، بيانات الكشك، وإدارة حسابات الكاشير</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 bg-slate-800/60 px-3 py-2 rounded-xl self-start">
+                    <i class="fas fa-users-gear text-purple-400"></i> صلاحيات متعددة للمستخدمين
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-sm font-semibold mb-6 leading-relaxed">
+                تنقسم الإعدادات إلى 3 أقسام رئيسية: تعديل حساب المدير الشخصي وكلمة المرور، تعديل اسم الكشك والبيانات الأساسية التي تظهر في الإيصالات المطبوعة، وإدارة الموظفين (إضافة كاشير بصلاحيات مقيدة فقط لنقاط البيع مع إمكانية التعديل والحذف بسهولة).
+            </p>
+
+            <div class="overflow-hidden rounded-2xl border-2 border-slate-800 bg-slate-950 p-2 shadow-2xl">
+                <img src="assets/steps/settings.PNG" alt="شرح الإعدادات" class="img-preview w-full rounded-xl object-contain max-h-[500px]" onclick="openModal(this.src, '7. إعدادات النظام والموظفين')">
+            </div>
+            <p class="text-center text-xs text-slate-500 font-bold mt-3"><i class="fas fa-search-plus ml-1"></i> اضغط على الصورة لتكبيرها</p>
+        </section>
+
+        <!-- 8. النسخ الاحتياطي (Backup) -->
+        <section id="step-8" class="step-card bg-slate-900/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
+                <div class="flex items-center gap-4">
+                    <span class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-black text-xl">08</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white">النسخ الاحتياطي والأمان (Backup & Restore)</h3>
+                        <p class="text-xs sm:text-sm text-slate-400 font-semibold mt-1">تصدير واسترجاع البيانات بضغطة زر وبدون تجميد المتصفح</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold text-slate-400 bg-slate-800/60 px-3 py-2 rounded-xl self-start">
+                    <i class="fas fa-shield-alt text-cyan-400"></i> معالجة ذكية للبيانات الضخمة
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-sm font-semibold mb-6 leading-relaxed">
+                حماية شاملة لجميع بياناتك! تتيح لك الشاشة تحميل ملف نسخة احتياطية (.json) يحتوي على كل فواتيرك، منتجاتك، ومورديك بأسلوب التقطيع المتقدم (Chunking) حتى للبيانات الضخمة. وفي حالة الاسترجاع، يقوم النظام بحذف البيانات القديمة واستبدالها بالكامل مع تأكيد أمني مشدد.
+            </p>
+
+            <div class="overflow-hidden rounded-2xl border-2 border-slate-800 bg-slate-950 p-2 shadow-2xl">
+                <img src="assets/steps/backup.PNG" alt="شرح النسخ الاحتياطي" class="img-preview w-full rounded-xl object-contain max-h-[500px]" onclick="openModal(this.src, '8. النسخ الاحتياطي والاستعادة')">
+            </div>
+            <p class="text-center text-xs text-slate-500 font-bold mt-3"><i class="fas fa-search-plus ml-1"></i> اضغط على الصورة لتكبيرها</p>
+        </section>
+
+        <!-- قسم الترقية للنسخة المتقدمة والتواصل (Marketing & CTA Section) -->
+        <section id="upgrade-section" class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/60 border-2 border-[#10B981]/40 rounded-3xl p-8 sm:p-12 shadow-2xl">
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="relative z-10 text-center space-y-6 max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black bg-emerald-500/20 text-[#10B981] border border-emerald-500/30">
+                    <i class="fas fa-rocket"></i> انطلق بنشاطك التجاري إلى المستوى التالي
+                </div>
+
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                    هل تحتاج إلى <span class="text-transparent bg-clip-text bg-gradient-to-l from-[#10B981] to-[#3B82F6]">النسخة السحابية المتقدمة</span>؟
+                </h2>
+
+                <p class="text-slate-300 font-semibold text-sm sm:text-base leading-relaxed">
+                    إذا كان لديك أكثر من فرع، أو ترغب في متابعة المبيعات والأرباح من هاتفك في أي وقت ومكان، مع مزامنة سحابية لحظية، دعم الفاتورة الإلكترونية، شاشات المطبخ، وميزات محاسبية متقدمة.. فإن النسخة المتقدمة من نظام <strong>Mentra Kiosk Pro</strong> مصممة خصيصاً لتنمية تجارتك!
+                </p>
+
+                <!-- مميزات سريعة -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 py-4 text-xs font-bold text-slate-300">
+                    <div class="bg-slate-800/60 p-3 rounded-xl border border-slate-700/60 flex flex-col items-center gap-1.5">
+                        <i class="fas fa-cloud text-emerald-400 text-lg"></i>
+                        <span>مزامنة سحابية لا نهائية</span>
+                    </div>
+                    <div class="bg-slate-800/60 p-3 rounded-xl border border-slate-700/60 flex flex-col items-center gap-1.5">
+                        <i class="fas fa-network-wired text-blue-400 text-lg"></i>
+                        <span>ربط الفروع والمستودعات</span>
+                    </div>
+                    <div class="bg-slate-800/60 p-3 rounded-xl border border-slate-700/60 flex flex-col items-center gap-1.5">
+                        <i class="fas fa-mobile-screen text-amber-400 text-lg"></i>
+                        <span>تطبيق موبايل للمالك</span>
+                    </div>
+                    <div class="bg-slate-800/60 p-3 rounded-xl border border-slate-700/60 flex flex-col items-center gap-1.5">
+                        <i class="fas fa-headset text-purple-400 text-lg"></i>
+                        <span>دعم فني وتحديثات مستمرة</span>
+                    </div>
+                </div>
+
+                <!-- أزرار الإجراء (CTA) -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <!-- رابط الموقع -->
+                    <a href="https://mentra-tech.pages.dev/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-gradient-to-l from-[#10B981] to-[#3B82F6] hover:opacity-90 text-white font-black px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/20 text-base transition-all flex items-center justify-center gap-3">
+                        <i class="fas fa-globe"></i>
+                        <span>زيارة موقعنا الرسمي</span>
+                    </a>
+
+                    <!-- زر الواتساب -->
+                    <a href="https://wa.me/201211934816?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85%D8%A9%20%D9%85%D9%86%20%D9%86%D8%B8%D8%A7%D9%85%20Mentra%20Kiosk" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba59] text-white font-black px-8 py-4 rounded-2xl shadow-xl shadow-green-500/20 text-base transition-all flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>تواصل معنا واتساب: 01211934816</span>
+                    </a>
+                </div>
+
+                <p class="text-xs text-slate-400 font-bold pt-2">
+                    <i class="fas fa-info-circle text-emerald-400 ml-1"></i> التواصل عبر رقم الواتساب الموضح متاح للرسائل والاستفسارات الفنية والتجارية.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="border-t border-slate-800 bg-[#0F172A] py-8 text-center text-xs text-slate-500 font-bold">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="text-white font-black text-sm">Mentra <span class="text-[#10B981]">Kiosk Lite</span></span>
+                <span>- الإصدار المحلي المجاني</span>
+            </div>
+            <div>
+                جميع الحقوق محفوظة &copy; <span id="year"></span> <a href="https://mentra-tech.pages.dev/" target="_blank" class="text-slate-400 hover:text-emerald-400 transition-colors">Mentra Tech</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- نافذة منبثقة لتكبير الصور (Lightbox Modal) -->
+    <div id="image-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm hidden items-center justify-center p-4" onclick="closeModal()">
+        <div class="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+            <div class="w-full flex items-center justify-between text-white pb-3 border-b border-slate-800 mb-3">
+                <h4 id="modal-title" class="font-black text-base"></h4>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-rose-600 text-white flex items-center justify-center transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <img id="modal-img" src="" alt="Zoomed Preview" class="w-full h-auto max-h-[78vh] object-contain rounded-xl border border-slate-800 bg-slate-950">
+        </div>
+    </div>
+
+    <!-- كود التحكم بالنافذة المنبثقة والسنة -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+
+        function openModal(src, title) {
+            modalImg.src = src;
+            modalTitle.textContent = title;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            modalImg.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // إغلاق النافذة بزر Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
