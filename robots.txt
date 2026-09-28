@@ -1,0 +1,14 @@
+User-agent: *
+
+# السماح بأرشفة الصفحات العامة
+Allow: /
+Allow: /Tutorial.html
+Allow: /subscriptions.html
+
+# منع أرشفة شاشة التطبيق الداخلية وملفات الأكواد
+Disallow: /dashboard.html
+Disallow: /pages/
+Disallow: /database.js
+
+# خريطة الموقع
+Sitemap: https://mentratech1.github.io/MentraKioskLite/sitemap.xml
