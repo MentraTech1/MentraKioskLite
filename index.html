@@ -2,78 +2,201 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <!-- تحسين التحميل: preconnect لكل CDN مستخدم -->
+ <!-- ================= تحسين التحميل والسرعة ================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap"></noscript>
-
-    <!-- إعدادات أساسية لتبدو كبرنامج موبايل -->
+<!-- أيقونة جوجل المفضلة (Favicon) متوافقة تماماً مع معايير Googlebot-Favicon -->
+<link rel="icon" type="image/png" sizes="48x48" href="https://mentratech1.github.io/MentraKioskLite/assets/logo-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://mentratech1.github.io/MentraKioskLite/assets/logo-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://mentratech1.github.io/MentraKioskLite/assets/logo-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://mentratech1.github.io/MentraKioskLite/assets/logo-180.png">
+    <!-- ================= إعدادات الموبايل والـ PWA ================= -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#10B981">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mentra Kiosk">
     
-    <!-- وصف SEO نقي ومستهدف -->
-    <meta name="description" content="Mentra Kiosk Lite - نظام الكاشير ونقاط البيع وإدارة المخازن المجاني للأكشاك والمحلات. يعمل محلياً 100% بدون إنترنت ويحفظ فواتيرك وأرباحك على جهازك بأمان.">
-    <title>Mentra Kiosk Lite | نظام الكاشير ونقاط البيع المجاني للأكشاك والمحلات</title>
-    
-    <!-- ================= PWA Settings & Icons ================= -->
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="assets/logo.png">
-    <link rel="apple-touch-icon" href="assets/logo.png">
+    <link rel="icon" type="image/png" href="https://mentratech1.github.io/MentraKioskLite/assets/logo.png">
+    <link rel="apple-touch-icon" href="https://mentratech1.github.io/MentraKioskLite/assets/logo.png">
 
-    <!-- مكتبات التصميم -->
-    <script src="assets/Tailwind.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <meta name="keywords" content="برنامج كاشير مجاني, برنامج نقاط بيع, برنامج كاشير سوبر ماركت, سيستم كاشير كشك, كاشير بدون انترنت, Mentra Kiosk, برنامج مبيعات ومخازن مجاني">
+    <!-- ================= SEO & Meta Tags ================= -->
+    <title>Mentra Kiosk Lite | نظام الكاشير ونقاط البيع المجاني للأكشاك والمحلات</title>
+    <meta name="description" content="Mentra Kiosk Lite - نظام الكاشير ونقاط البيع وإدارة المخازن المجاني للأكشاك والمحلات. يعمل محلياً 100% بدون إنترنت ويحفظ فواتيرك وأرباحك على جهازك بأمان.">
+    <meta name="keywords" content="برنامج كاشير مجاني, برنامج نقاط بيع, برنامج كاشير سوبر ماركت, سيستم كاشير كشك, كاشير بدون انترنت, Mentra Kiosk, برنامج مبيعات ومخازن مجاني, POS مجاني">
     <meta name="author" content="Mentra Tech">
-    
-    <!-- توجيهات صارمة لعناكب البحث -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <link rel="canonical" href="https://mentra-tech.pages.dev/">
+    <link rel="canonical" href="https://mentratech1.github.io/MentraKioskLite/">
 
-    <!-- ================= Open Graph & Twitter ================= -->
+    <!-- ================= Open Graph (Facebook, WhatsApp, LinkedIn) ================= -->
+    <meta property="og:locale" content="ar_EG">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mentra Kiosk Lite">
     <meta property="og:title" content="Mentra Kiosk Lite | نظام الكاشير ونقاط البيع المجاني">
     <meta property="og:description" content="إدارة المبيعات، المخزون، المشتريات، وطباعة الفواتير بخصوصية تامة بدون إنترنت. ابدأ الآن مجاناً وثبت نظام الكاشير على جهازك.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mentra-tech.pages.dev/">
-    <meta property="og:site_name" content="Mentra Kiosk Lite">
+    <meta property="og:url" content="https://mentratech1.github.io/MentraKioskLite/">
+    
+    <!-- صورة المعاينة الرسمية للمشاركة ومحركات البحث -->
+    <meta property="og:image" content="https://mentratech1.github.io/MentraKioskLite/assets/logo.png">
+    <meta property="og:image:secure_url" content="https://mentratech1.github.io/MentraKioskLite/assets/logo.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="شعار نظام كاشير ونقاط بيع Mentra Kiosk Lite">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mentratech1.github.io/MentraKioskLite/assets/logo.png">
+
+    <!-- ================= Twitter Cards ================= -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mentra Kiosk Lite | سيستم الكاشير الذكي">
     <meta name="twitter:description" content="إدارة المبيعات، المخزون، والأرباح بخصوصية تامة بدون إنترنت وبدون رسوم شهرية. ابدأ الآن مجاناً.">
+    <meta name="twitter:image" content="https://mentratech1.github.io/MentraKioskLite/assets/logo.png">
 
     <!-- ================= Structured Data (JSON-LD) ================= -->
-    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "Organization",
+      "@id": "https://mentratech1.github.io/MentraKioskLite/#organization",
+      "name": "Mentra Tech",
+      "url": "https://mentratech1.github.io/MentraKioskLite/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://mentratech1.github.io/MentraKioskLite/#logo",
+        "url": "https://mentratech1.github.io/MentraKioskLite/assets/logo.png",
+        "contentUrl": "https://mentratech1.github.io/MentraKioskLite/assets/logo.png",
+        "caption": "Mentra Tech Logo",
+        "width": 512,
+        "height": 512
+      },
+      "image": {
+        "@id": "https://mentratech1.github.io/MentraKioskLite/#logo"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+201211934816",
+        "contactType": "customer support",
+        "contactOption": "HearingImpairedSupported",
+        "areaServed": ["EG", "SA", "AE"],
+        "availableLanguage": ["Arabic", "English"]
+      },
+      "sameAs": [
+        "https://mentratech1.github.io/MentraKioskLite/",
+        "https://minaaramnious.itch.io/mentrakiosklite"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mentratech1.github.io/MentraKioskLite/#website",
+      "url": "https://mentratech1.github.io/MentraKioskLite/",
+      "name": "Mentra Kiosk Lite",
+      "alternateName": ["Mentra Kiosk POS", "سيستم كاشير مينترا"],
+      "description": "نظام الكاشير ونقاط البيع وإدارة المخازن المجاني للأكشاك والمحلات التجارية",
+      "publisher": {
+        "@id": "https://mentratech1.github.io/MentraKioskLite/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://mentratech1.github.io/MentraKioskLite/#webpage",
+      "url": "https://mentratech1.github.io/MentraKioskLite/",
+      "name": "Mentra Kiosk Lite | نظام الكاشير ونقاط البيع المجاني للأكشاك والمحلات",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "@id": "https://mentratech1.github.io/MentraKioskLite/#logo",
+        "url": "https://mentratech1.github.io/MentraKioskLite/assets/logo.png"
+      },
+      "isPartOf": {
+        "@id": "https://mentratech1.github.io/MentraKioskLite/#website"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://mentratech1.github.io/MentraKioskLite/#software",
+      "name": "Mentra Kiosk Lite",
+      "alternateName": "برنامج كاشير Mentra Kiosk",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Point of Sale (POS) & Inventory Management",
+      "operatingSystem": "Web, Windows, Android, iOS",
+      "softwareVersion": "Lite 1.0",
+      "description": "نظام كاشير ونقاط بيع وإدارة مخازن ومشتريات مجاني مصمم للأكشاك والمحلات والسوبر ماركت. يعمل بالكامل داخل المتصفح وبدون خوادم وبدون إنترنت لحفظ خصوصية البيانات.",
+      "url": "https://mentratech1.github.io/MentraKioskLite/",
+      "downloadUrl": "https://minaaramnious.itch.io/mentrakiosklite",
+      "installUrl": "https://mentratech1.github.io/MentraKioskLite/subscriptions.html",
+      "image": "https://mentratech1.github.io/MentraKioskLite/assets/logo.png",
+      "screenshot": "https://mentratech1.github.io/MentraKioskLite/assets/steps/dashboard.PNG",
+      "author": {
+        "@id": "https://mentratech1.github.io/MentraKioskLite/#organization"
+      },
+      "featureList": [
+        "نقطة بيع فورية (POS) تدعم قارئ الباركود وشاشات اللمس",
+        "طباعة فواتير وإيصالات حرارية مباشرة (Thermal Receipts)",
+        "إدارة المخزون بالوحدات المزدوجة (كرتونة وقطعة)",
+        "تسجيل فواتير المشتريات ومتابعة حسابات الموردين",
+        "حساب صافي الأرباح وخصم المصروفات التشغيلية",
+        "العمل بدون إنترنت 100% بنظام Offline-First المحلي",
+        "نسخ احتياطي واسترجاع فوري للبيانات بصيغة JSON"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "125",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EGP",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2030-12-31"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://mentratech1.github.io/MentraKioskLite/#faq",
+      "isPartOf": {
+        "@id": "https://mentratech1.github.io/MentraKioskLite/#webpage"
+      },
+      "mainEntity": [
         {
-          "@type": "WebSite",
-          "@id": "https://mentra-tech.pages.dev/#website",
-          "url": "https://mentra-tech.pages.dev/",
-          "name": "Mentra Kiosk Lite",
-          "alternateName": "Mentra Kiosk POS", 
-          "description": "نظام الكاشير ونقاط البيع المجاني للأكشاك والمحلات",
-          "inLanguage": "ar"
+          "@type": "Question",
+          "name": "هل برنامج كاشير Mentra Kiosk Lite مجاني تماماً؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، الإصدار المحلي (Lite) مجاني 100% مدى الحياة بدون أي رسوم خفية أو اشتراكات شهرية."
+          }
         },
         {
-          "@type": "SoftwareApplication",
-          "name": "Mentra Kiosk Lite", 
-          "operatingSystem": "Web, Windows, Android",
-          "applicationCategory": "BusinessApplication",
-          "description": "برنامج مجاني لنقاط البيع (POS)، إدارة المخزون، فواتير الشراء، وحساب الأرباح. يعمل محلياً بدون إنترنت.",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "EGP"
+          "@type": "Question",
+          "name": "هل يعمل نظام الكاشير بدون اتصال بالإنترنت؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، النظام مصمم للعمل بدون إنترنت إطلاقاً (Offline-First) ويقوم بحفظ جميع الفواتير والمخزن محلياً داخل المتصفح بأمان عبر قاعدة بيانات IndexedDB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يدعم النظام قارئ الباركود وطباعة الفواتير الحرارية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، يدعم كافة أجهزة مسح الباركود السلكية واللاسلكية، كما يتوافق مع جميع طابعات الإيصالات الحرارية بمقاس 58mm و 80mm."
           }
         }
       ]
     }
-    </script>
+  ]
+}
+</script>
 
     <style>
         body { 

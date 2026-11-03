@@ -1,14 +1,23 @@
 User-agent: *
 
-# السماح بأرشفة الصفحات العامة
-Allow: /
-Allow: /Tutorial.html
-Allow: /subscriptions.html
+# 1. السماح الصريح بملفات التصميم والصور 
+# (مهم جداً ليتمكن جوجل من عرض الصفحة وفهمها وتخزين الصور الموجودة في الـ Sitemap)
+Allow: /assets/
 
-# منع أرشفة شاشة التطبيق الداخلية وملفات الأكواد
+# 2. منع أرشفة شاشة التطبيق وملفاته الحساسة
+Disallow: /dashboard
 Disallow: /dashboard.html
 Disallow: /pages/
 Disallow: /database.js
+Disallow: /sw.js
 
-# خريطة الموقع
+# 3. منع أرشفة صفحة الدخول (لأنها لا تقدم قيمة بحثية وتسبب Soft 404 في جوجل)
+Disallow: /subscriptions
+Disallow: /subscriptions.html
+
+# 4. منع أرشفة ملفات النظام الداخلية
+Disallow: /manifest.json
+Disallow: /*.md$
+
+# خريطة الموقع (Sitemap)
 Sitemap: https://mentratech1.github.io/MentraKioskLite/sitemap.xml
