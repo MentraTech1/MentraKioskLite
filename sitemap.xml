@@ -1,26 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     
     <!-- الصفحة الرئيسية (أعلى أهمية) -->
     <url>
         <loc>https://mentratech1.github.io/MentraKioskLite/</loc>
-        <lastmod>2024-03-01</lastmod>
+        <lastmod>2026-11-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <!-- إخبار جوجل بصورة الشعار الرئيسية -->
+        <image:image>
+            <image:loc>https://mentratech1.github.io/MentraKioskLite/assets/logo.png</image:loc>
+            <image:title>شعار سيستم كاشير Mentra Kiosk المجاني</image:title>
+            <image:caption>نظام الكاشير ونقاط البيع المجاني للأكشاك والمحلات</image:caption>
+        </image:image>
     </url>
 
     <!-- صفحة الدليل الإرشادي للشاشات -->
     <url>
         <loc>https://mentratech1.github.io/MentraKioskLite/Tutorial.html</loc>
-        <lastmod>2024-03-01</lastmod>
+        <lastmod>2026-11-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <!-- أرشفة أهم صور شاشات البرنامج لظهورها في بحث جوجل للصور -->
+        <image:image>
+            <image:loc>https://mentratech1.github.io/MentraKioskLite/assets/steps/pos.PNG</image:loc>
+            <image:title>شاشة نقطة البيع (POS) والكاشير السريع</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://mentratech1.github.io/MentraKioskLite/assets/steps/dashboard.PNG</image:loc>
+            <image:title>لوحة تحكم برنامج الكاشير والمبيعات</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://mentratech1.github.io/MentraKioskLite/assets/steps/inventory.PNG</image:loc>
+            <image:title>شاشة إدارة المخازن وجرد المنتجات</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://mentratech1.github.io/MentraKioskLite/assets/steps/reports.PNG</image:loc>
+            <image:title>تقارير المبيعات وحساب الأرباح والمصروفات</image:title>
+        </image:image>
     </url>
 
     <!-- صفحة الدخول والتأسيس -->
     <url>
         <loc>https://mentratech1.github.io/MentraKioskLite/subscriptions.html</loc>
-        <lastmod>2024-03-01</lastmod>
+        <lastmod>2026-11-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
